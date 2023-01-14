@@ -10,13 +10,16 @@ const Expenses = (props) => {
   const getYearvalue = yeardata => {
     setFilteredYear(yeardata);
   }
+  const filteredExpenses = props.data.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
 
   return (
     <div>
       <Card className='expenses'>
         <Expensesfilter selected={filteredYear} onSaveYear={getYearvalue} />
         {/* trasform oue array of objects into an array of JSX elements */}
-        {props.data.map((expense) => (
+        {filteredExpenses.map((expense) => (
         <ExpenseItem 
           key = {expense.id}
           title = {expense.title} 
