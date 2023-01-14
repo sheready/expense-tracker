@@ -15,14 +15,15 @@ const Expenses = (props) => {
     <div>
       <Card className='expenses'>
         <Expensesfilter selected={filteredYear} onSaveYear={getYearvalue} />
-        <ExpenseItem title={props.data[0].title} 
-                  amount={props.data[0].amount} 
-                  date={props.data[0].date}
-        />
-        <ExpenseItem  title={props.data[1].title} 
-                  amount={props.data[1].amount} 
-                  date={props.data[1].date}
-        />
+        {/* trasform oue array of objects into an array of JSX elements */}
+        {props.data.map((expense) => (
+        <ExpenseItem 
+          key = {expense.id}
+          title = {expense.title} 
+          amount = {expense.amount}
+          date = {expense.date}
+          />
+        ))}
       </Card>
     </div>
   )
