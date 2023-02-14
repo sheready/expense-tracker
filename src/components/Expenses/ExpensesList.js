@@ -1,5 +1,5 @@
 import React from 'react'
-import '../UI/ExpensesList'
+import '../UI/ExpensesList.css'
 import ExpenseItem from './ExpenseItem';
 
 const ExpensesList = (props) => {
@@ -10,7 +10,7 @@ const ExpensesList = (props) => {
   return (
     <ul className='expenses-list'>
         {
-            props.item.map((expense) => (
+            props.items.map((expense) => (
                 <ExpenseItem 
                   key = {expense.id}
                   title = {expense.title} 
