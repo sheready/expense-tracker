@@ -21,7 +21,6 @@ const Expenses = (props) => {
         <Expensesfilter selected={filteredYear} onSaveYear={getYearvalue} />
         <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
-
       </Card>
     </div>
   )
